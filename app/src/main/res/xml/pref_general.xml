@@ -1,0 +1,19 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="debug_pref"
+        android:title="Debug Mode"
+        android:summary="@string/pref_description_social_recommendations"
+        android:defaultValue="true" />
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:key="emergency_contact"
+        android:title="Emergency Contact"
+        android:defaultValue="555-5555"
+        android:selectAllOnFocus="true"
+        android:inputType="phone"
+        android:maxLines="1" />
+
+</PreferenceScreen>

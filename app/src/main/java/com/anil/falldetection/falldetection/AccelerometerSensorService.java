@@ -15,6 +15,8 @@ public class AccelerometerSensorService extends Service implements SensorEventLi
     public static final String Accelerometer_OUT_MSG_X = "A_X";
     public static final String Accelerometer_OUT_MSG_Y = "A_Y";
     public static final String Accelerometer_OUT_MSG_Z = "A_Z";
+    public static final String Accelerometer_OUT_MSG_STATUS = "A_S";
+
     public static final String Accelerometer_IN_MSG = "in";
 
     @Override
@@ -45,11 +47,11 @@ public class AccelerometerSensorService extends Service implements SensorEventLi
         broadcastIntent.putExtra(Accelerometer_OUT_MSG_X, sensorResultX);
         broadcastIntent.putExtra(Accelerometer_OUT_MSG_Y, sensorResultY);
         broadcastIntent.putExtra(Accelerometer_OUT_MSG_Z, sensorResultZ);
+        broadcastIntent.putExtra(Accelerometer_OUT_MSG_STATUS, "");
+
         sendBroadcast(broadcastIntent);
         System.out.println("Accelerometer sensor changing");
-
         System.out.println("writing to db " + sensorResultX + " " + sensorResultY + " " + sensorResultZ);
-        //db.close();
 
     }
 
